@@ -2,7 +2,9 @@
    BUNA / CITANE BASE STYLESHEET
    Coffee Cherry Project
    ========================================================== */
-
+body {
+    background: #fff4cc !important;
+}
 :root {
 
     --paper: #f8f6f2;
