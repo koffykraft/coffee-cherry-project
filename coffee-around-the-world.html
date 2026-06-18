@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BUNA · Coffee Around the World</title>
+<link rel="stylesheet" href="assets/css/buna.css">
+
+<style>
+:root{
+  --ink:#1b1814;
+  --soft:#665d52;
+  --muted:#8f8274;
+  --paper:#fffdf8;
+  --tint:#f5efe5;
+  --tint2:#fbf7ef;
+  --line:#d9cdbd;
+  --accent:#9c3f2e;
+  --accent2:#5f241a;
+  --max:980px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  line-height:1.62;
+}
+
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:58px 28px 90px;
+}
+
+.kicker{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:22px;
+  font-weight:700;
+}
+
+h1{
+  font-size:clamp(42px,7vw,78px);
+  line-height:.96;
+  letter-spacing:-.05em;
+  font-weight:500;
+  margin:0 0 26px;
+  max-width:850px;
+}
+
+.subtitle{
+  font-size:21px;
+  color:var(--soft);
+  max-width:720px;
+  margin:0 0 46px;
+}
+
+.note{
+  background:var(--tint2);
+  border-left:4px solid var(--accent);
+  padding:22px 24px;
+  margin:0 0 42px;
+  font-size:18px;
+  color:var(--soft);
+  max-width:780px;
+}
+
+.part{
+  margin:54px 0 0;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+}
+
+.part-label{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+h2.part-title{
+  font-size:34px;
+  line-height:1.08;
+  font-weight:500;
+  letter-spacing:-.02em;
+  margin:0 0 12px;
+}
+
+.part-intro{
+  font-size:19px;
+  color:var(--soft);
+  max-width:720px;
+  margin:0 0 24px;
+}
+
+.text-block{
+  max-width:760px;
+  font-size:19px;
+  color:var(--soft);
+  margin:0 0 24px;
+}
+
+.text-block p{
+  margin:0 0 18px;
+}
+
+ol{
+  counter-reset:item;
+  list-style:none;
+  margin:0;
+  padding:0;
+  max-width:840px;
+}
+
+li{
+  counter-increment:item;
+  margin:0 0 14px;
+  padding:20px 22px 20px 74px;
+  position:relative;
+  background:var(--tint2);
+  border:1px solid var(--line);
+  border-radius:15px;
+}
+
+li::before{
+  content:counter(item);
+  position:absolute;
+  left:22px;
+  top:22px;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:var(--accent);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:14px;
+  font-weight:700;
+}
+
+li strong{
+  display:block;
+  font-size:22px;
+  line-height:1.2;
+  font-weight:500;
+  margin-bottom:5px;
+}
+
+li span{
+  display:block;
+  color:var(--soft);
+  font-size:17px;
+}
+
+.method{
+  margin-top:58px;
+  background:var(--tint);
+  border-radius:22px;
+  padding:30px 32px;
+  max-width:850px;
+}
+
+.method h2{
+  margin:0 0 14px;
+  font-size:30px;
+  font-weight:500;
+  letter-spacing:-.02em;
+}
+
+.method p{
+  margin:0 0 14px;
+  color:var(--soft);
+  font-size:18px;
+  max-width:720px;
+}
+
+.nav-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:54px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--accent2);
+  background:var(--tint2);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:10px 16px;
+  font-size:15px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+.footer{
+  margin-top:56px;
+  color:var(--muted);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:13px;
+  border-top:1px solid var(--line);
+  padding-top:20px;
+}
+
+@media (max-width:640px){
+  .wrap{padding:40px 20px 70px}
+  .subtitle{font-size:19px}
+  .text-block{font-size:18px}
+  li{padding-left:62px}
+  li::before{left:18px}
+  .method{padding:24px}
+}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+  <div class="kicker">Coffee Experience Landscape · Page 2</div>
+
+  <h1>Coffee Around the World</h1>
+
+  <p class="subtitle">
+    Coffee did not become one thing everywhere.
+    It travelled, settled, changed, and became part of different ways of living.
+  </p>
+
+  <div class="note">
+    This page is not a history of coffee in full.
+    It is a first orientation.
+    Before coffee becomes a sensory subject, it helps to see that people have met
+    the plant, the fruit, the seed, the leaf, and the drink in many different ways.
+  </div>
+
+  <section class="part">
+    <div class="part-label">Part I</div>
+    <h2 class="part-title">A Plant Enters Human Life</h2>
+
+    <div class="text-block">
+      <p>
+        Coffee begins in African landscapes, but it does not remain there.
+        It moves through gardens, forests, farms, ports, homes, religious spaces,
+        trade routes, cafés, colonies, markets, and machines.
+      </p>
+
+      <p>
+        By the time a modern person says “coffee,” they may be speaking about
+        a tree, a crop, a roasted seed, a drink, a business, a habit, or a culture.
+      </p>
+    </div>
+
+    <ol>
+      <li>
+        <strong>Plant</strong>
+        <span>Roots, leaves, flowers, fruit, seeds, shade, rain, soil, and season.</span>
+      </li>
+
+      <li>
+        <strong>Crop</strong>
+        <span>Farms, estates, smallholders, labour, harvest, trade, and value.</span>
+      </li>
+
+      <li>
+        <strong>Drink</strong>
+        <span>A brewed preparation made differently across households and regions.</span>
+      </li>
+
+      <li>
+        <strong>Companion</strong>
+        <span>Morning habit, hospitality, conversation, work, ritual, alertness, and pause.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part II</div>
+    <h2 class="part-title">Not One Coffee Culture</h2>
+
+    <p class="part-intro">
+      The same plant can enter human life through very different doors.
+      Some cultures emphasise ceremony. Some emphasise strength.
+      Some emphasise sweetness. Some emphasise hospitality.
+      Some emphasise speed.
+    </p>
+
+    <ol start="5">
+      <li>
+        <strong>Ceremony</strong>
+        <span>Coffee as a slow social act, where preparation and serving carry meaning.</span>
+      </li>
+
+      <li>
+        <strong>Hospitality</strong>
+        <span>Coffee offered to guests, visitors, workers, elders, neighbours, and strangers.</span>
+      </li>
+
+      <li>
+        <strong>Daily Fuel</strong>
+        <span>Coffee as wakefulness, work rhythm, travel companion, and routine.</span>
+      </li>
+
+      <li>
+        <strong>Craft</strong>
+        <span>Coffee as roasting, brewing, tasting, measuring, and refining.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part III</div>
+    <h2 class="part-title">Before the Modern Cup</h2>
+
+    <div class="text-block">
+      <p>
+        Modern coffee culture often begins with roasted beans.
+        Buna begins earlier.
+      </p>
+
+      <p>
+        In different places, people have also noticed the fruit, the husk,
+        the leaf, the flower, the pulp, the wood, and the plant’s medicinal,
+        ritual, agricultural, and household uses.
+      </p>
+    </div>
+
+    <ol start="9">
+      <li>
+        <strong>Fruit and Husk</strong>
+        <span>Sweetness, drying, infusion, food, fermentation, and cascara-like preparations.</span>
+      </li>
+
+      <li>
+        <strong>Leaf</strong>
+        <span>Infusions, decoctions, traditional drinks, and the pathway that later leads to Citane.</span>
+      </li>
+
+      <li>
+        <strong>Seed</strong>
+        <span>The path that becomes roasted coffee, modern cafés, and specialty language.</span>
+      </li>
+
+      <li>
+        <strong>Plant Knowledge</strong>
+        <span>Farming, shade, pruning, picking, household use, medicine, fodder, fuel, and compost.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part IV</div>
+    <h2 class="part-title">Why This Matters for Tasting</h2>
+
+    <p class="part-intro">
+      Sensory learning does not happen in an empty room.
+      What we expect from coffee depends on where we learned it,
+      how we drink it, what we call it, and what we believe it should be.
+    </p>
+
+    <ol start="13">
+      <li>
+        <strong>A Filter Coffee Drinker</strong>
+        <span>May notice milk, heat, strength, comfort, sweetness, and routine first.</span>
+      </li>
+
+      <li>
+        <strong>An Espresso Drinker</strong>
+        <span>May notice intensity, crema, bitterness, pressure, and shortness.</span>
+      </li>
+
+      <li>
+        <strong>A Specialty Taster</strong>
+        <span>May look for acidity, clarity, origin, processing, and descriptors.</span>
+      </li>
+
+      <li>
+        <strong>A Buna Reader</strong>
+        <span>Is invited to step back and ask: what is this plant expressing here?</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="method">
+    <h2>Page Direction</h2>
+    <p><strong>Do not reduce coffee culture to one tradition.</strong></p>
+    <p><strong>Do not reduce coffee experience to flavour notes.</strong></p>
+    <p>Different cultures teach people to notice different things. That is not confusion. It is part of coffee’s world.</p>
+  </section>
+
+  <div class="nav-links">
+    <a href="index.html">← Landscape Index</a>
+    <a href="what-is-coffee.html">← Previous: What Is Coffee?</a>
+    <a href="arabica-and-robusta.html">Next: Arabica and Robusta →</a>
+  </div>
+
+  <div class="footer">
+    Draft HTML page · Coffee Experience Landscape · Buna Library · KoffyKraft
+  </div>
+
+</main>
+</body>
+</html>
