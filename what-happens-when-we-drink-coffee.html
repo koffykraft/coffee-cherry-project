@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BUNA · What Happens When We Drink Coffee?</title>
+<link rel="stylesheet" href="assets/css/buna.css">
+
+<style>
+:root{
+  --ink:#1b1814;
+  --soft:#665d52;
+  --muted:#8f8274;
+  --paper:#fffdf8;
+  --tint:#f5efe5;
+  --tint2:#fbf7ef;
+  --line:#d9cdbd;
+  --accent:#9c3f2e;
+  --accent2:#5f241a;
+  --max:980px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  line-height:1.62;
+}
+
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:58px 28px 90px;
+}
+
+.kicker{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:22px;
+  font-weight:700;
+}
+
+h1{
+  font-size:clamp(42px,7vw,78px);
+  line-height:.96;
+  letter-spacing:-.05em;
+  font-weight:500;
+  margin:0 0 26px;
+  max-width:850px;
+}
+
+.subtitle{
+  font-size:21px;
+  color:var(--soft);
+  max-width:720px;
+  margin:0 0 46px;
+}
+
+.note{
+  background:var(--tint2);
+  border-left:4px solid var(--accent);
+  padding:22px 24px;
+  margin:0 0 42px;
+  font-size:18px;
+  color:var(--soft);
+  max-width:780px;
+}
+
+.part{
+  margin:54px 0 0;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+}
+
+.part-label{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+h2.part-title{
+  font-size:34px;
+  line-height:1.08;
+  font-weight:500;
+  letter-spacing:-.02em;
+  margin:0 0 12px;
+}
+
+.part-intro{
+  font-size:19px;
+  color:var(--soft);
+  max-width:720px;
+  margin:0 0 24px;
+}
+
+.text-block{
+  max-width:760px;
+  font-size:19px;
+  color:var(--soft);
+  margin:0 0 24px;
+}
+
+.text-block p{
+  margin:0 0 18px;
+}
+
+ol{
+  counter-reset:item;
+  list-style:none;
+  margin:0;
+  padding:0;
+  max-width:840px;
+}
+
+li{
+  counter-increment:item;
+  margin:0 0 14px;
+  padding:20px 22px 20px 74px;
+  position:relative;
+  background:var(--tint2);
+  border:1px solid var(--line);
+  border-radius:15px;
+}
+
+li::before{
+  content:counter(item);
+  position:absolute;
+  left:22px;
+  top:22px;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:var(--accent);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:14px;
+  font-weight:700;
+}
+
+li strong{
+  display:block;
+  font-size:22px;
+  line-height:1.2;
+  font-weight:500;
+  margin-bottom:5px;
+}
+
+li span{
+  display:block;
+  color:var(--soft);
+  font-size:17px;
+}
+
+.method{
+  margin-top:58px;
+  background:var(--tint);
+  border-radius:22px;
+  padding:30px 32px;
+  max-width:850px;
+}
+
+.method h2{
+  margin:0 0 14px;
+  font-size:30px;
+  font-weight:500;
+  letter-spacing:-.02em;
+}
+
+.method p{
+  margin:0 0 14px;
+  color:var(--soft);
+  font-size:18px;
+  max-width:720px;
+}
+
+.nav-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:54px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--accent2);
+  background:var(--tint2);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:10px 16px;
+  font-size:15px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+.footer{
+  margin-top:56px;
+  color:var(--muted);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:13px;
+  border-top:1px solid var(--line);
+  padding-top:20px;
+}
+
+@media (max-width:640px){
+  .wrap{padding:40px 20px 70px}
+  .subtitle{font-size:19px}
+  .text-block{font-size:18px}
+  li{padding-left:62px}
+  li::before{left:18px}
+  .method{padding:24px}
+}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+  <div class="kicker">Coffee Experience Landscape · Page 5</div>
+
+  <h1>What Happens When We Drink Coffee?</h1>
+
+  <p class="subtitle">
+    A cup is not understood by the tongue alone.
+    The body receives it in several ways at once.
+  </p>
+
+  <div class="note">
+    This is the first sensory page.
+    It stays simple.
+    Later pages will separate aroma, taste, flavour, mouthfeel, and memory.
+  </div>
+
+  <section class="part">
+    <div class="part-label">Part I</div>
+    <h2 class="part-title">The Cup Arrives Before the Sip</h2>
+
+    <div class="text-block">
+      <p>
+        We begin before drinking.
+        We see the colour.
+        We notice steam.
+        We may smell the cup before it touches the mouth.
+      </p>
+
+      <p>
+        Expectation has already started.
+      </p>
+    </div>
+
+    <ol>
+      <li>
+        <strong>Seeing</strong>
+        <span>Colour, crema, clarity, milk, foam, cup shape, and serving style.</span>
+      </li>
+
+      <li>
+        <strong>Smelling</strong>
+        <span>Aroma rising from the cup before drinking.</span>
+      </li>
+
+      <li>
+        <strong>Expecting</strong>
+        <span>Memory, habit, label, price, setting, and mood quietly prepare the mind.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part II</div>
+    <h2 class="part-title">The First Sip</h2>
+
+    <p class="part-intro">
+      When coffee enters the mouth, several things happen together.
+      We often call all of it “taste”.
+      That is convenient, but not quite accurate.
+    </p>
+
+    <ol start="4">
+      <li>
+        <strong>Taste</strong>
+        <span>The tongue detects broad signals such as sweet, sour, bitter, salty, and umami.</span>
+      </li>
+
+      <li>
+        <strong>Mouthfeel</strong>
+        <span>The mouth notices weight, texture, heat, dryness, smoothness, and thickness.</span>
+      </li>
+
+      <li>
+        <strong>Aroma From Inside</strong>
+        <span>As we drink, aroma also travels from the mouth back into the nose.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part III</div>
+    <h2 class="part-title">The Brain Makes Sense of It</h2>
+
+    <div class="text-block">
+      <p>
+        The body sends signals.
+        The brain compares them with memory.
+      </p>
+
+      <p>
+        That is why one person may say orange, another may say acidity,
+        and another may simply say fresh.
+      </p>
+    </div>
+
+    <ol start="7">
+      <li>
+        <strong>Recognition</strong>
+        <span>The mind searches for something familiar.</span>
+      </li>
+
+      <li>
+        <strong>Comparison</strong>
+        <span>This cup is brighter than yesterday. Heavier than tea. More bitter than expected.</span>
+      </li>
+
+      <li>
+        <strong>Language</strong>
+        <span>Only after noticing do we try to name what happened.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part IV</div>
+    <h2 class="part-title">After the Sip</h2>
+
+    <p class="part-intro">
+      Coffee does not end when it is swallowed.
+      Some impressions fade quickly.
+      Others remain.
+    </p>
+
+    <ol start="10">
+      <li>
+        <strong>Aftertaste</strong>
+        <span>What stays after swallowing: sweet, bitter, dry, clean, smoky, fruity, or flat.</span>
+      </li>
+
+      <li>
+        <strong>Body Response</strong>
+        <span>Warmth, alertness, comfort, sharpness, heaviness, or restlessness.</span>
+      </li>
+
+      <li>
+        <strong>Memory</strong>
+        <span>A good cup may be remembered by flavour, place, person, time, or feeling.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part V</div>
+    <h2 class="part-title">Drinking and Experiencing</h2>
+
+    <div class="text-block">
+      <p>
+        Drinking coffee is enough.
+        It does not need analysis.
+      </p>
+
+      <p>
+        But sometimes we choose to slow down.
+        Then the cup opens into smaller parts.
+      </p>
+    </div>
+
+    <ol start="13">
+      <li>
+        <strong>Drinking</strong>
+        <span>For comfort, habit, energy, company, work, or pleasure.</span>
+      </li>
+
+      <li>
+        <strong>Experiencing</strong>
+        <span>For noticing what is present before deciding what to call it.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="method">
+    <h2>Page Direction</h2>
+    <p><strong>There is nothing wrong with simply drinking coffee.</strong></p>
+    <p>Learning begins only when we pause long enough to notice what was already happening.</p>
+  </section>
+
+  <div class="nav-links">
+    <a href="index.html">← Landscape Index</a>
+    <a href="from-fruit-to-beverage.html">← Previous: From Fruit to Beverage</a>
+    <a href="aroma-taste-and-flavor.html">Next: Aroma, Taste and Flavor →</a>
+  </div>
+
+  <div class="footer">
+    Draft HTML page · Coffee Experience Landscape · Buna Library · KoffyKraft
+  </div>
+
+</main>
+</body>
+</html>
