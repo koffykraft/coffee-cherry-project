@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BUNA · From Fruit to Beverage</title>
+<link rel="stylesheet" href="assets/css/buna.css">
+
+<style>
+:root{
+  --ink:#1b1814;
+  --soft:#665d52;
+  --muted:#8f8274;
+  --paper:#fffdf8;
+  --tint:#f5efe5;
+  --tint2:#fbf7ef;
+  --line:#d9cdbd;
+  --accent:#9c3f2e;
+  --accent2:#5f241a;
+  --max:980px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  line-height:1.62;
+}
+
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:58px 28px 90px;
+}
+
+.kicker{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:22px;
+  font-weight:700;
+}
+
+h1{
+  font-size:clamp(42px,7vw,78px);
+  line-height:.96;
+  letter-spacing:-.05em;
+  font-weight:500;
+  margin:0 0 26px;
+  max-width:850px;
+}
+
+.subtitle{
+  font-size:21px;
+  color:var(--soft);
+  max-width:720px;
+  margin:0 0 46px;
+}
+
+.note{
+  background:var(--tint2);
+  border-left:4px solid var(--accent);
+  padding:22px 24px;
+  margin:0 0 42px;
+  font-size:18px;
+  color:var(--soft);
+  max-width:780px;
+}
+
+.part{
+  margin:54px 0 0;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+}
+
+.part-label{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+h2.part-title{
+  font-size:34px;
+  line-height:1.08;
+  font-weight:500;
+  letter-spacing:-.02em;
+  margin:0 0 12px;
+}
+
+.part-intro{
+  font-size:19px;
+  color:var(--soft);
+  max-width:720px;
+  margin:0 0 24px;
+}
+
+.text-block{
+  max-width:760px;
+  font-size:19px;
+  color:var(--soft);
+  margin:0 0 24px;
+}
+
+.text-block p{
+  margin:0 0 18px;
+}
+
+ol{
+  counter-reset:item;
+  list-style:none;
+  margin:0;
+  padding:0;
+  max-width:840px;
+}
+
+li{
+  counter-increment:item;
+  margin:0 0 14px;
+  padding:20px 22px 20px 74px;
+  position:relative;
+  background:var(--tint2);
+  border:1px solid var(--line);
+  border-radius:15px;
+}
+
+li::before{
+  content:counter(item);
+  position:absolute;
+  left:22px;
+  top:22px;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:var(--accent);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:14px;
+  font-weight:700;
+}
+
+li strong{
+  display:block;
+  font-size:22px;
+  line-height:1.2;
+  font-weight:500;
+  margin-bottom:5px;
+}
+
+li span{
+  display:block;
+  color:var(--soft);
+  font-size:17px;
+}
+
+.pathway{
+  margin:42px 0 12px;
+  max-width:850px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+}
+
+.step{
+  background:#fffefb;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:10px 16px;
+  color:var(--accent2);
+  font-size:16px;
+}
+
+.arrow{
+  color:var(--muted);
+  font-size:20px;
+}
+
+.method{
+  margin-top:58px;
+  background:var(--tint);
+  border-radius:22px;
+  padding:30px 32px;
+  max-width:850px;
+}
+
+.method h2{
+  margin:0 0 14px;
+  font-size:30px;
+  font-weight:500;
+  letter-spacing:-.02em;
+}
+
+.method p{
+  margin:0 0 14px;
+  color:var(--soft);
+  font-size:18px;
+  max-width:720px;
+}
+
+.nav-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:54px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--accent2);
+  background:var(--tint2);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:10px 16px;
+  font-size:15px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+.footer{
+  margin-top:56px;
+  color:var(--muted);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:13px;
+  border-top:1px solid var(--line);
+  padding-top:20px;
+}
+
+@media (max-width:640px){
+  .wrap{padding:40px 20px 70px}
+  .subtitle{font-size:19px}
+  .text-block{font-size:18px}
+  li{padding-left:62px}
+  li::before{left:18px}
+  .method{padding:24px}
+  .pathway{display:block}
+  .step{display:inline-block;margin:0 6px 10px 0}
+  .arrow{display:none}
+}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+  <div class="kicker">Coffee Experience Landscape · Page 4</div>
+
+  <h1>From Fruit to Beverage</h1>
+
+  <p class="subtitle">
+    The cup is not a starting point.
+    It is the last visible stage of a long series of changes.
+  </p>
+
+  <div class="note">
+    This page gives the basic path.
+    Later pages will slow down inside each stage.
+    For now, the important thing is to see that coffee is transformed many times before it is tasted.
+  </div>
+
+  <section class="part">
+    <div class="part-label">Part I</div>
+    <h2 class="part-title">The Simple Path</h2>
+
+    <p class="part-intro">
+      Coffee can be followed as a sequence.
+      Each step changes what the next step can become.
+    </p>
+
+    <div class="pathway" aria-label="Coffee pathway">
+      <span class="step">Plant</span>
+      <span class="arrow">→</span>
+      <span class="step">Flower</span>
+      <span class="arrow">→</span>
+      <span class="step">Fruit</span>
+      <span class="arrow">→</span>
+      <span class="step">Seed</span>
+      <span class="arrow">→</span>
+      <span class="step">Roast</span>
+      <span class="arrow">→</span>
+      <span class="step">Brew</span>
+      <span class="arrow">→</span>
+      <span class="step">Experience</span>
+    </div>
+
+    <ol>
+      <li>
+        <strong>Plant</strong>
+        <span>The living coffee tree responds to soil, weather, shade, pruning, stress, and care.</span>
+      </li>
+
+      <li>
+        <strong>Flower</strong>
+        <span>A short, fragrant stage that marks the beginning of fruit formation.</span>
+      </li>
+
+      <li>
+        <strong>Fruit</strong>
+        <span>The coffee cherry develops slowly, carrying skin, pulp, mucilage, parchment, and seed.</span>
+      </li>
+
+      <li>
+        <strong>Seed</strong>
+        <span>The part most people call the bean. It is still only potential.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part II</div>
+    <h2 class="part-title">The First Human Decisions</h2>
+
+    <p class="part-intro">
+      Once coffee is harvested, people begin guiding change.
+      Some decisions preserve. Some remove. Some encourage fermentation.
+      Some simply buy time.
+    </p>
+
+    <ol start="5">
+      <li>
+        <strong>Picking</strong>
+        <span>Which fruit is taken, which is left, and how much ripeness is accepted.</span>
+      </li>
+
+      <li>
+        <strong>Sorting</strong>
+        <span>Separating ripe, unripe, damaged, floating, overripe, or unwanted fruit.</span>
+      </li>
+
+      <li>
+        <strong>Processing</strong>
+        <span>Guiding how fruit, mucilage, water, microbes, and seed interact after harvest.</span>
+      </li>
+
+      <li>
+        <strong>Drying</strong>
+        <span>Reducing moisture until the seed can rest, travel, and wait for roasting.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part III</div>
+    <h2 class="part-title">The Seed Waits</h2>
+
+    <div class="text-block">
+      <p>
+        Processed coffee is not roasted immediately in most cases.
+        It rests, stores, travels, ages, and slowly changes.
+      </p>
+
+      <p>
+        This quiet period matters.
+        A seed that looks still is not always sensorially still.
+      </p>
+    </div>
+
+    <ol start="9">
+      <li>
+        <strong>Parchment or Green Coffee</strong>
+        <span>Coffee may rest in protective layers before final preparation for export or roasting.</span>
+      </li>
+
+      <li>
+        <strong>Storage</strong>
+        <span>Moisture, temperature, packaging, and time affect how fresh or faded coffee becomes.</span>
+      </li>
+
+      <li>
+        <strong>Resting</strong>
+        <span>Some changes are useful. Some are loss. Both become visible later in the cup.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part IV</div>
+    <h2 class="part-title">Heat Changes the Seed</h2>
+
+    <p class="part-intro">
+      Roasting is the stage where the seed becomes recognisably coffee.
+      Heat creates aroma, colour, brittleness, solubility, sweetness impressions, bitterness, and roast character.
+    </p>
+
+    <ol start="12">
+      <li>
+        <strong>Roasting</strong>
+        <span>Heat transforms stored potential into aroma and flavour possibilities.</span>
+      </li>
+
+      <li>
+        <strong>Grinding</strong>
+        <span>The roasted seed is broken open so water can reach and dissolve what is inside.</span>
+      </li>
+
+      <li>
+        <strong>Brewing</strong>
+        <span>Water extracts soluble compounds into a beverage.</span>
+      </li>
+
+      <li>
+        <strong>Drinking</strong>
+        <span>The final stage is not in the cup. It happens in the person.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part V</div>
+    <h2 class="part-title">Nothing Begins Alone</h2>
+
+    <div class="text-block">
+      <p>
+        A flavour in the cup may seem to belong to brewing.
+        But it may have begun in variety, soil, ripeness, fermentation, drying, storage, or roast.
+      </p>
+
+      <p>
+        Coffee experience is layered.
+        The cup gathers many earlier decisions into one moment.
+      </p>
+    </div>
+  </section>
+
+  <section class="method">
+    <h2>Page Direction</h2>
+    <p><strong>Do not treat the cup as the whole story.</strong></p>
+    <p>The beverage is the meeting point. Plant biology, fruit development, processing, roasting, brewing, and human perception all arrive there together.</p>
+  </section>
+
+  <div class="nav-links">
+    <a href="index.html">← Landscape Index</a>
+    <a href="arabica-and-robusta.html">← Previous: Arabica and Robusta</a>
+    <a href="what-happens-when-we-drink-coffee.html">Next: What Happens When We Drink Coffee? →</a>
+  </div>
+
+  <div class="footer">
+    Draft HTML page · Coffee Experience Landscape · Buna Library · KoffyKraft
+  </div>
+
+</main>
+</body>
+</html>
