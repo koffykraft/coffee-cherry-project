@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BUNA · Processing</title>
+<link rel="stylesheet" href="assets/css/buna.css">
+
+<style>
+:root{
+  --ink:#1b1814; --soft:#665d52; --muted:#8f8274;
+  --paper:#fffdf8; --tint:#f5efe5; --tint2:#fbf7ef;
+  --line:#d9cdbd; --accent:#9c3f2e; --accent2:#5f241a; --max:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.62}
+.wrap{max-width:var(--max);margin:0 auto;padding:58px 28px 90px}
+.kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;font-weight:700}
+h1{font-size:clamp(42px,7vw,78px);line-height:.96;letter-spacing:-.05em;font-weight:500;margin:0 0 26px;max-width:850px}
+.subtitle{font-size:21px;color:var(--soft);max-width:720px;margin:0 0 46px}
+.note{background:var(--tint2);border-left:4px solid var(--accent);padding:22px 24px;margin:0 0 42px;font-size:18px;color:var(--soft);max-width:780px}
+.part{margin:54px 0 0;padding-top:32px;border-top:1px solid var(--line)}
+.part-label{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px}
+h2.part-title{font-size:34px;line-height:1.08;font-weight:500;letter-spacing:-.02em;margin:0 0 12px}
+.part-intro,.text-block{font-size:19px;color:var(--soft);max-width:760px}
+.text-block p{margin:0 0 18px}
+ol{counter-reset:item;list-style:none;margin:0;padding:0;max-width:840px}
+li{counter-increment:item;margin:0 0 14px;padding:20px 22px 20px 74px;position:relative;background:var(--tint2);border:1px solid var(--line);border-radius:15px}
+li::before{content:counter(item);position:absolute;left:22px;top:22px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;font-weight:700}
+li strong{display:block;font-size:22px;margin-bottom:5px;font-weight:500}
+li span{display:block;color:var(--soft);font-size:17px}
+.method{margin-top:58px;background:var(--tint);border-radius:22px;padding:30px 32px;max-width:850px}
+.method h2{margin:0 0 14px;font-size:30px;font-weight:500}
+.method p{color:var(--soft);font-size:18px}
+.nav-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:54px;padding-top:24px;border-top:1px solid var(--line)}
+.nav-links a{text-decoration:none;color:var(--accent2);background:var(--tint2);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:15px}
+.footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:20px}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+<div class="kicker">Coffee Experience Landscape · Page 20</div>
+
+<h1>Processing</h1>
+
+<p class="subtitle">
+Processing begins after harvest.
+It decides how fruit, seed, water, microbes, and time are allowed to interact.
+</p>
+
+<div class="note">
+Processing is often described by names: washed, natural, honey, pulped natural.
+
+The names are useful.
+But the work itself is more basic:
+remove, retain, ferment, wash, dry, and protect.
+</div>
+
+<section class="part">
+<div class="part-label">Part I</div>
+<h2 class="part-title">After Picking</h2>
+
+<div class="text-block">
+<p>
+Once coffee is picked, the cherry is no longer part of the living plant.
+</p>
+
+<p>
+But it is not finished.
+Fruit, mucilage, seed, moisture, microbes, and heat continue to change.
+</p>
+</div>
+
+<ol>
+<li><strong>Sorting</strong><span>Removing unripe, overripe, damaged, floating, or unwanted fruit.</span></li>
+<li><strong>Decision</strong><span>Choosing how much fruit material stays with the seed.</span></li>
+<li><strong>Control</strong><span>Managing time, temperature, water, oxygen, and cleanliness.</span></li>
+</ol>
+</section>
+
+<section class="part">
+<div class="part-label">Part II</div>
+<h2 class="part-title">The Main Question</h2>
+
+<p class="part-intro">
+Most processing methods can be understood through one question:
+how much of the fruit remains with the seed, and for how long?
+</p>
+
+<ol start="4">
+<li><strong>Removed Early</strong><span>Fruit skin and pulp are removed soon after harvest.</span></li>
+<li><strong>Kept Longer</strong><span>The seed dries with more fruit material around it.</span></li>
+<li><strong>Partly Removed</strong><span>Some mucilage remains during drying.</span></li>
+<li><strong>Guided Differently</strong><span>Modern methods may control fermentation, oxygen, temperature, or microbes more deliberately.</span></li>
+</ol>
+</section>
+
+<section class="part">
+<div class="part-label">Part III</div>
+<h2 class="part-title">Common Processing Families</h2>
+
+<div class="text-block">
+<p>
+These names are starting points, not complete explanations.
+</p>
+
+<p>
+Two coffees with the same processing name may still taste very different.
+</p>
+</div>
+
+<ol start="8">
+<li><strong>Washed</strong><span>Fruit is removed early. The seed is usually washed before drying.</span></li>
+<li><strong>Natural</strong><span>The whole cherry dries with fruit material around the seed.</span></li>
+<li><strong>Honey</strong><span>Skin is removed, but some mucilage remains during drying.</span></li>
+<li><strong>Pulped Natural</strong><span>A related approach where pulp is removed and mucilage remains during drying.</span></li>
+</ol>
+</section>
+
+<section class="part">
+<div class="part-label">Part IV</div>
+<h2 class="part-title">What Processing Can Influence</h2>
+
+<p class="part-intro">
+Processing does not create quality by itself.
+It guides material that already exists.
+Good fruit still matters.
+Careful drying still matters.
+</p>
+
+<ol start="12">
+<li><strong>Clarity</strong><span>How cleanly acidity, sweetness, and aroma appear.</span></li>
+<li><strong>Fruit Character</strong><span>How much ripe, dried, fermented, or jam-like fruit appears.</span></li>
+<li><strong>Body</strong><span>How heavy, round, thin, or textured the cup feels.</span></li>
+<li><strong>Risk</strong><span>Poor control can create mould, rot, harsh fermentation, or unstable drying.</span></li>
+</ol>
+</section>
+
+<section class="part">
+<div class="part-label">Part V</div>
+<h2 class="part-title">Do Not Stop At The Name</h2>
+
+<div class="text-block">
+<p>
+A label may say washed or natural.
+That is not enough.
+</p>
+
+<p>
+A professional asks what actually happened:
+the fruit quality, the time, the water, the fermentation, the drying, and the care.
+</p>
+</div>
+
+<ol start="16">
+<li><strong>What Was Picked?</strong><span>Processing cannot fully repair poor harvest selection.</span></li>
+<li><strong>What Was Removed?</strong><span>Skin, pulp, mucilage, water, defects, or nothing at first.</span></li>
+<li><strong>What Was Allowed?</strong><span>Fermentation, contact time, oxygen, heat, and microbial activity.</span></li>
+<li><strong>How Was It Dried?</strong><span>Drying often decides whether processing succeeds.</span></li>
+</ol>
+</section>
+
+<section class="method">
+<h2>Page Direction</h2>
+
+<p><strong>Processing is guided change.</strong></p>
+
+<p>
+The name of the method is useful only after we understand what changed, what was controlled, and what was allowed to remain.
+</p>
+</section>
+
+<div class="nav-links">
+<a href="index.html">← Landscape Index</a>
+<a href="soil-and-soil-life.html">← Previous: Soil and Soil Life</a>
+<a href="fermentation.html">Next: Fermentation →</a>
+</div>
+
+<div class="footer">
+Draft HTML page · Coffee Experience Landscape · Buna Library · KoffyKraft
+</div>
+
+</main>
+</body>
+</html>
