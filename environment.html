@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BUNA · Environment</title>
+<link rel="stylesheet" href="assets/css/buna.css">
+
+<style>
+:root{
+  --ink:#1b1814; --soft:#665d52; --muted:#8f8274;
+  --paper:#fffdf8; --tint:#f5efe5; --tint2:#fbf7ef;
+  --line:#d9cdbd; --accent:#9c3f2e; --accent2:#5f241a; --max:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.62}
+.wrap{max-width:var(--max);margin:0 auto;padding:58px 28px 90px}
+.kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;font-weight:700}
+h1{font-size:clamp(42px,7vw,78px);line-height:.96;letter-spacing:-.05em;font-weight:500;margin:0 0 26px;max-width:850px}
+.subtitle{font-size:21px;color:var(--soft);max-width:720px;margin:0 0 46px}
+.note{background:var(--tint2);border-left:4px solid var(--accent);padding:22px 24px;margin:0 0 42px;font-size:18px;color:var(--soft);max-width:780px}
+.part{margin:54px 0 0;padding-top:32px;border-top:1px solid var(--line)}
+.part-label{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px}
+h2.part-title{font-size:34px;line-height:1.08;font-weight:500;letter-spacing:-.02em;margin:0 0 12px}
+.part-intro,.text-block{font-size:19px;color:var(--soft);max-width:760px}
+.text-block p{margin:0 0 18px}
+ol{counter-reset:item;list-style:none;margin:0;padding:0;max-width:840px}
+li{counter-increment:item;margin:0 0 14px;padding:20px 22px 20px 74px;position:relative;background:var(--tint2);border:1px solid var(--line);border-radius:15px}
+li::before{content:counter(item);position:absolute;left:22px;top:22px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;font-weight:700}
+li strong{display:block;font-size:22px;margin-bottom:5px;font-weight:500}
+li span{display:block;color:var(--soft);font-size:17px}
+.method{margin-top:58px;background:var(--tint);border-radius:22px;padding:30px 32px;max-width:850px}
+.method h2{margin:0 0 14px;font-size:30px;font-weight:500}
+.method p{color:var(--soft);font-size:18px}
+.nav-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:54px;padding-top:24px;border-top:1px solid var(--line)}
+.nav-links a{text-decoration:none;color:var(--accent2);background:var(--tint2);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:15px}
+.footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:20px}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+<div class="kicker">Coffee Experience Landscape · Page 18</div>
+
+<h1>Environment</h1>
+
+<p class="subtitle">
+Coffee does not grow in a general place.
+It grows inside a set of conditions.
+</p>
+
+<div class="note">
+Environment is not a flavour note.
+
+It is the world around the plant:
+temperature, rainfall, shade, wind, humidity, season, stress, and care.
+</div>
+
+<section class="part">
+<div class="part-label">Part I</div>
+<h2 class="part-title">More Than A Place Name</h2>
+
+<div class="text-block">
+<p>
+Country, region, and farm names are useful.
+</p>
+
+<p>
+But they are only the beginning.
+A plant does not respond to a name.
+It responds to conditions.
+</p>
+</div>
+
+<ol>
+<li><strong>Temperature</strong><span>Heat, coolness, and the difference between day and night.</span></li>
+<li><strong>Rainfall</strong><span>How much rain falls, when it falls, and how dry periods arrive.</span></li>
+<li><strong>Humidity</strong><span>Moisture in the air, affecting plant health, disease pressure, and drying.</span></li>
+<li><strong>Light</strong><span>Sun, shade, cloud cover, canopy, and exposure.</span></li>
+</ol>
+</section>
+
+<section class="part">
+<div class="part-label">Part II</div>
+<h2 class="part-title">The Plant Responds</h2>
+
+<p class="part-intro">
+Coffee is a living plant.
+It adjusts continuously to its surroundings.
+</p>
+
+<ol start="5">
+<li><strong>Growth</strong><span>Environment influences leaf, branch, root, flower, and fruit development.</span></li>
+<li><strong>Flowering</strong><span>Rain, dry periods, and seasonal rhythm affect when flowering begins.</span></li>
+<li><strong>Fruit Development</strong><span>The cherry develops within the conditions of that season.</span></li>
+<li><strong>Stress</strong><span>Drought, heat, disease, poor nutrition, and excess exposure can change plant behaviour.</span></li>
+</ol>
+</section>
+
+<section class="part">
+<div class="part-label">Part III</div>
+<h2 class="part-title">Altitude Is Not Flavour</h2>
+
+<div class="text-block">
+<p>
+Altitude is often mentioned because it is easy to measure.
+</p>
+
+<p>
+But altitude does not create flavour by itself.
+It changes temperature, ripening speed, weather exposure, and farming conditions.
+</p>
+</div>
+
+<ol start="9">
+<li><strong>Cooler Conditions</strong><span>Higher elevations often bring lower average temperatures.</span></li>
+<li><strong>Slower Ripening</strong><span>In cooler conditions, fruit development may take longer.</span></li>
+<li><strong>Different Risks</strong><span>Wind, rain, access, labour, disease pressure, and harvest timing also matter.</span></li>
+</ol>
+</section>
+
+<section class="part">
+<div class="part-label">Part IV</div>
+<h2 class="part-title">Shade And Sun</h2>
+
+<p class="part-intro">
+Coffee can be grown under full sun, partial shade, or heavier shade.
+None is automatically best.
+Each creates trade-offs.
+</p>
+
+<ol start="12">
+<li><strong>Full Sun</strong><span>Can increase production, but may increase stress and management needs.</span></li>
+<li><strong>Partial Shade</strong><span>Can moderate heat and light while allowing productive growth.</span></li>
+<li><strong>Heavy Shade</strong><span>Can protect the plant, but may slow growth or reduce yield.</span></li>
+<li><strong>Canopy Life</strong><span>Shade also changes humidity, soil cover, insects, birds, and farm ecology.</span></li>
+</ol>
+</section>
+
+<section class="part">
+<div class="part-label">Part V</div>
+<h2 class="part-title">What Reaches The Cup</h2>
+
+<div class="text-block">
+<p>
+Many environmental effects never become obvious to the drinker.
+</p>
+
+<p>
+Some do.
+A professional learns to ask what conditions produced the material before judging the cup alone.
+</p>
+</div>
+
+<ol start="16">
+<li><strong>Ripeness</strong><span>Environment affects how evenly and fully fruit matures.</span></li>
+<li><strong>Density</strong><span>Growing conditions can influence seed structure and roasting behaviour.</span></li>
+<li><strong>Balance</strong><span>Sweetness, acidity, body, and aroma are shaped by many conditions together.</span></li>
+<li><strong>Season</strong><span>The same farm can produce different coffees in different years.</span></li>
+</ol>
+</section>
+
+<section class="method">
+<h2>Page Direction</h2>
+
+<p><strong>Environment does not determine flavour by itself.</strong></p>
+
+<p>
+It shapes the conditions under which flavour potential develops.
+</p>
+</section>
+
+<div class="nav-links">
+<a href="index.html">← Landscape Index</a>
+<a href="variety.html">← Previous: Variety</a>
+<a href="soil-and-soil-life.html">Next: Soil and Soil Life →</a>
+</div>
+
+<div class="footer">
+Draft HTML page · Coffee Experience Landscape · Buna Library · KoffyKraft
+</div>
+
+</main>
+</body>
+</html>
