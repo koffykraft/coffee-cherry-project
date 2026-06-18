@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BUNA · Arabica and Robusta</title>
+<link rel="stylesheet" href="assets/css/buna.css">
+
+<style>
+:root{
+  --ink:#1b1814;
+  --soft:#665d52;
+  --muted:#8f8274;
+  --paper:#fffdf8;
+  --tint:#f5efe5;
+  --tint2:#fbf7ef;
+  --line:#d9cdbd;
+  --accent:#9c3f2e;
+  --accent2:#5f241a;
+  --max:980px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  line-height:1.62;
+}
+
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:58px 28px 90px;
+}
+
+.kicker{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:22px;
+  font-weight:700;
+}
+
+h1{
+  font-size:clamp(42px,7vw,78px);
+  line-height:.96;
+  letter-spacing:-.05em;
+  font-weight:500;
+  margin:0 0 26px;
+  max-width:850px;
+}
+
+.subtitle{
+  font-size:21px;
+  color:var(--soft);
+  max-width:720px;
+  margin:0 0 46px;
+}
+
+.note{
+  background:var(--tint2);
+  border-left:4px solid var(--accent);
+  padding:22px 24px;
+  margin:0 0 42px;
+  font-size:18px;
+  color:var(--soft);
+  max-width:780px;
+}
+
+.part{
+  margin:54px 0 0;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+}
+
+.part-label{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+h2.part-title{
+  font-size:34px;
+  line-height:1.08;
+  font-weight:500;
+  letter-spacing:-.02em;
+  margin:0 0 12px;
+}
+
+.part-intro{
+  font-size:19px;
+  color:var(--soft);
+  max-width:720px;
+  margin:0 0 24px;
+}
+
+.text-block{
+  max-width:760px;
+  font-size:19px;
+  color:var(--soft);
+  margin:0 0 24px;
+}
+
+.text-block p{
+  margin:0 0 18px;
+}
+
+ol{
+  counter-reset:item;
+  list-style:none;
+  margin:0;
+  padding:0;
+  max-width:840px;
+}
+
+li{
+  counter-increment:item;
+  margin:0 0 14px;
+  padding:20px 22px 20px 74px;
+  position:relative;
+  background:var(--tint2);
+  border:1px solid var(--line);
+  border-radius:15px;
+}
+
+li::before{
+  content:counter(item);
+  position:absolute;
+  left:22px;
+  top:22px;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:var(--accent);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:14px;
+  font-weight:700;
+}
+
+li strong{
+  display:block;
+  font-size:22px;
+  line-height:1.2;
+  font-weight:500;
+  margin-bottom:5px;
+}
+
+li span{
+  display:block;
+  color:var(--soft);
+  font-size:17px;
+}
+
+.method{
+  margin-top:58px;
+  background:var(--tint);
+  border-radius:22px;
+  padding:30px 32px;
+  max-width:850px;
+}
+
+.method h2{
+  margin:0 0 14px;
+  font-size:30px;
+  font-weight:500;
+  letter-spacing:-.02em;
+}
+
+.method p{
+  margin:0 0 14px;
+  color:var(--soft);
+  font-size:18px;
+  max-width:720px;
+}
+
+.nav-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:54px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--accent2);
+  background:var(--tint2);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:10px 16px;
+  font-size:15px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+.footer{
+  margin-top:56px;
+  color:var(--muted);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:13px;
+  border-top:1px solid var(--line);
+  padding-top:20px;
+}
+
+@media (max-width:640px){
+  .wrap{padding:40px 20px 70px}
+  .subtitle{font-size:19px}
+  .text-block{font-size:18px}
+  li{padding-left:62px}
+  li::before{left:18px}
+  .method{padding:24px}
+}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+  <div class="kicker">Coffee Experience Landscape · Page 3</div>
+
+  <h1>Arabica and Robusta</h1>
+
+  <p class="subtitle">
+    Two coffee species dominate the modern cup.
+    They overlap, differ, and are often misunderstood.
+  </p>
+
+  <div class="note">
+    This page is only an orientation.
+    Arabica is not automatically good.
+    Robusta is not automatically bad.
+    Each is a plant with its own biology, history, chemistry, and use.
+  </div>
+
+  <section class="part">
+    <div class="part-label">Part I</div>
+    <h2 class="part-title">Two Species, Many Coffees</h2>
+
+    <div class="text-block">
+      <p>
+        Coffee is not one plant.
+        The genus <em>Coffea</em> contains many species.
+        In everyday coffee, two matter most: <em>Coffea arabica</em> and
+        <em>Coffea canephora</em>, commonly called robusta.
+      </p>
+
+      <p>
+        Most specialty coffee language grew around arabica.
+        Much of the world’s strong, practical, affordable coffee depends on robusta.
+        Both belong in the larger story.
+      </p>
+    </div>
+
+    <ol>
+      <li>
+        <strong>Arabica</strong>
+        <span>Often associated with sweetness, acidity, aroma complexity, and higher altitude cultivation.</span>
+      </li>
+
+      <li>
+        <strong>Robusta</strong>
+        <span>Often associated with strength, bitterness, body, caffeine, resilience, and lower altitude cultivation.</span>
+      </li>
+
+      <li>
+        <strong>Other Species</strong>
+        <span>Liberica, excelsa, and many lesser-known species remind us that coffee is botanically wider than the marketplace suggests.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part II</div>
+    <h2 class="part-title">The Common Shortcut</h2>
+
+    <p class="part-intro">
+      A simple story is often repeated:
+      arabica is delicate and good;
+      robusta is harsh and cheap.
+      That shortcut may be convenient, but it is not enough.
+    </p>
+
+    <ol start="4">
+      <li>
+        <strong>Quality Is Not Only Species</strong>
+        <span>Variety, farm care, ripeness, processing, drying, roasting, and brewing all matter.</span>
+      </li>
+
+      <li>
+        <strong>Arabica Can Be Poor</strong>
+        <span>Badly grown or badly processed arabica can taste flat, harsh, sour, woody, or defective.</span>
+      </li>
+
+      <li>
+        <strong>Robusta Can Be Serious</strong>
+        <span>Carefully grown and processed robusta can be clean, sweet, heavy, chocolatey, spicy, or powerful.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part III</div>
+    <h2 class="part-title">What They Often Bring</h2>
+
+    <p class="part-intro">
+      These are tendencies, not rules.
+      A species opens a direction.
+      The final cup is shaped by many later decisions.
+    </p>
+
+    <ol start="7">
+      <li>
+        <strong>Arabica Often Brings</strong>
+        <span>Fragrance, acidity, fruit, floral notes, sweetness, and a lighter structure.</span>
+      </li>
+
+      <li>
+        <strong>Robusta Often Brings</strong>
+        <span>Body, caffeine, crema, bitterness, dark chocolate, spice, earth, and strength.</span>
+      </li>
+
+      <li>
+        <strong>Both Can Overlap</strong>
+        <span>Both can be sweet. Both can be bitter. Both can be clean or unpleasant. Processing and roasting decide much of what appears.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part IV</div>
+    <h2 class="part-title">Why This Matters for Experience</h2>
+
+    <div class="text-block">
+      <p>
+        A coffee person does not need to memorise species as categories of prestige.
+        It is more useful to ask what each plant is capable of expressing.
+      </p>
+
+      <p>
+        Species is one layer.
+        Variety, place, processing, roasting, brewing, and the person drinking all add their own layers.
+      </p>
+    </div>
+
+    <ol start="10">
+      <li>
+        <strong>Do Not Judge Too Early</strong>
+        <span>The name of a species is not the taste of the cup.</span>
+      </li>
+
+      <li>
+        <strong>Notice Structure</strong>
+        <span>Is the coffee light, heavy, sharp, round, bitter, sweet, fragrant, earthy, clean?</span>
+      </li>
+
+      <li>
+        <strong>Keep the Plant in View</strong>
+        <span>Arabica and robusta are not just market words. They are different living plants.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="method">
+    <h2>Page Direction</h2>
+    <p><strong>Use species as orientation, not judgement.</strong></p>
+    <p>Arabica and robusta help us understand difference, but they do not explain everything. They are the beginning of a question, not the answer.</p>
+  </section>
+
+  <div class="nav-links">
+    <a href="index.html">← Landscape Index</a>
+    <a href="coffee-around-the-world.html">← Previous: Coffee Around the World</a>
+    <a href="from-fruit-to-beverage.html">Next: From Fruit to Beverage →</a>
+  </div>
+
+  <div class="footer">
+    Draft HTML page · Coffee Experience Landscape · Buna Library · KoffyKraft
+  </div>
+
+</main>
+</body>
+</html>
