@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BUNA · Aroma, Taste and Flavor</title>
+<link rel="stylesheet" href="assets/css/buna.css">
+
+<style>
+:root{
+  --ink:#1b1814; --soft:#665d52; --muted:#8f8274;
+  --paper:#fffdf8; --tint:#f5efe5; --tint2:#fbf7ef;
+  --line:#d9cdbd; --accent:#9c3f2e; --accent2:#5f241a; --max:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.62}
+.wrap{max-width:var(--max);margin:0 auto;padding:58px 28px 90px}
+.kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;font-weight:700}
+h1{font-size:clamp(42px,7vw,78px);line-height:.96;letter-spacing:-.05em;font-weight:500;margin:0 0 26px;max-width:850px}
+.subtitle{font-size:21px;color:var(--soft);max-width:720px;margin:0 0 46px}
+.note{background:var(--tint2);border-left:4px solid var(--accent);padding:22px 24px;margin:0 0 42px;font-size:18px;color:var(--soft);max-width:780px}
+.part{margin:54px 0 0;padding-top:32px;border-top:1px solid var(--line)}
+.part-label{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px}
+h2.part-title{font-size:34px;line-height:1.08;font-weight:500;letter-spacing:-.02em;margin:0 0 12px}
+.part-intro{font-size:19px;color:var(--soft);max-width:720px;margin:0 0 24px}
+.text-block{max-width:760px;font-size:19px;color:var(--soft);margin:0 0 24px}
+.text-block p{margin:0 0 18px}
+ol{counter-reset:item;list-style:none;margin:0;padding:0;max-width:840px}
+li{counter-increment:item;margin:0 0 14px;padding:20px 22px 20px 74px;position:relative;background:var(--tint2);border:1px solid var(--line);border-radius:15px}
+li::before{content:counter(item);position:absolute;left:22px;top:22px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;font-weight:700}
+li strong{display:block;font-size:22px;line-height:1.2;font-weight:500;margin-bottom:5px}
+li span{display:block;color:var(--soft);font-size:17px}
+.method{margin-top:58px;background:var(--tint);border-radius:22px;padding:30px 32px;max-width:850px}
+.method h2{margin:0 0 14px;font-size:30px;font-weight:500;letter-spacing:-.02em}
+.method p{margin:0 0 14px;color:var(--soft);font-size:18px;max-width:720px}
+.nav-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:54px;padding-top:24px;border-top:1px solid var(--line)}
+.nav-links a{text-decoration:none;color:var(--accent2);background:var(--tint2);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:15px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.footer{margin-top:56px;color:var(--muted);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;border-top:1px solid var(--line);padding-top:20px}
+@media (max-width:640px){.wrap{padding:40px 20px 70px}.subtitle{font-size:19px}.text-block{font-size:18px}li{padding-left:62px}li::before{left:18px}.method{padding:24px}}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+  <div class="kicker">Coffee Experience Landscape · Page 6</div>
+
+  <h1>Aroma, Taste and Flavor</h1>
+
+  <p class="subtitle">
+    Three words sit close together.
+    They are not the same.
+  </p>
+
+  <div class="note">
+    A person may say a coffee tastes like jasmine, orange, chocolate, or smoke.
+    Most of those words are not tastes.
+    They are usually aroma, memory, and flavour working together.
+  </div>
+
+  <section class="part">
+    <div class="part-label">Part I</div>
+    <h2 class="part-title">Taste Is Small</h2>
+
+    <div class="text-block">
+      <p>Taste is what the tongue can directly sense.</p>
+      <p>It matters. It is not the whole cup.</p>
+    </div>
+
+    <ol>
+      <li><strong>Sweet</strong><span>Sugar-like, rounded, softening.</span></li>
+      <li><strong>Sour</strong><span>Acidic, sharp, bright, sometimes fruit-like.</span></li>
+      <li><strong>Bitter</strong><span>Coffee-like, cocoa-like, harsh, pleasant, or drying depending on balance.</span></li>
+      <li><strong>Salty and Umami</strong><span>Usually quieter in coffee, but still part of taste language.</span></li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part II</div>
+    <h2 class="part-title">Aroma Is Large</h2>
+
+    <p class="part-intro">
+      Aroma does much of the work people casually call taste.
+      It reaches us before drinking, and again while drinking.
+    </p>
+
+    <ol start="5">
+      <li><strong>Before the Sip</strong><span>Steam carries aroma from the cup to the nose.</span></li>
+      <li><strong>During the Sip</strong><span>Aroma moves from the mouth back into the nose.</span></li>
+      <li><strong>After the Sip</strong><span>Some aromas linger as aftertaste.</span></li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part III</div>
+    <h2 class="part-title">Flavor Is the Combination</h2>
+
+    <div class="text-block">
+      <p>Flavor is not one signal.</p>
+      <p>It is the cup assembled by the body: aroma, taste, heat, texture, memory, and attention.</p>
+    </div>
+
+    <ol start="8">
+      <li><strong>Aroma</strong><span>Floral, fruity, nutty, spicy, smoky, herbal, roasted.</span></li>
+      <li><strong>Taste</strong><span>Sweet, sour, bitter, salty, umami.</span></li>
+      <li><strong>Feeling</strong><span>Thin, heavy, creamy, dry, smooth, sharp, warm.</span></li>
+      <li><strong>Memory</strong><span>The mind reaches for things it already knows.</span></li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part IV</div>
+    <h2 class="part-title">Why Labels Can Confuse</h2>
+
+    <p class="part-intro">
+      A bag may say blueberry.
+      The cup may not give blueberry to you.
+      That does not mean you failed.
+    </p>
+
+    <ol start="12">
+      <li><strong>Labels Are Hints</strong><span>They point toward a possible experience. They do not command one.</span></li>
+      <li><strong>Memory Differs</strong><span>One person’s berry may be another person’s jam, wine, or sweetness.</span></li>
+      <li><strong>Conditions Change</strong><span>Grind, water, temperature, age, and brew method can shift what appears.</span></li>
+      <li><strong>Attention Learns</strong><span>Descriptors become easier only after repeated noticing.</span></li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part V</div>
+    <h2 class="part-title">A Small Test</h2>
+
+    <div class="text-block">
+      <p>Take a sip while gently pinching your nose. Then release.</p>
+      <p>The difference is aroma returning.</p>
+    </div>
+
+    <ol start="16">
+      <li><strong>Nose Closed</strong><span>The cup becomes flatter. Taste and texture remain.</span></li>
+      <li><strong>Nose Open</strong><span>Aroma returns, and the coffee feels more complete.</span></li>
+    </ol>
+  </section>
+
+  <section class="method">
+    <h2>Page Direction</h2>
+    <p><strong>Do not rush to name the flavour.</strong></p>
+    <p>First ask what is happening: smell, taste, texture, temperature, memory, or all together.</p>
+  </section>
+
+  <div class="nav-links">
+    <a href="index.html">← Landscape Index</a>
+    <a href="what-happens-when-we-drink-coffee.html">← Previous: What Happens When We Drink Coffee?</a>
+    <a href="how-do-we-recognize-things.html">Next: How Do We Recognize Things? →</a>
+  </div>
+
+  <div class="footer">
+    Draft HTML page · Coffee Experience Landscape · Buna Library · KoffyKraft
+  </div>
+
+</main>
+</body>
+</html>
