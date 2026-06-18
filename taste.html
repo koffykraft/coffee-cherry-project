@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BUNA · Taste</title>
+<link rel="stylesheet" href="assets/css/buna.css">
+
+<style>
+:root{
+  --ink:#1b1814; --soft:#665d52; --muted:#8f8274;
+  --paper:#fffdf8; --tint:#f5efe5; --tint2:#fbf7ef;
+  --line:#d9cdbd; --accent:#9c3f2e; --accent2:#5f241a; --max:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.62}
+.wrap{max-width:var(--max);margin:0 auto;padding:58px 28px 90px}
+.kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;font-weight:700}
+h1{font-size:clamp(42px,7vw,78px);line-height:.96;letter-spacing:-.05em;font-weight:500;margin:0 0 26px;max-width:850px}
+.subtitle{font-size:21px;color:var(--soft);max-width:720px;margin:0 0 46px}
+.note{background:var(--tint2);border-left:4px solid var(--accent);padding:22px 24px;margin:0 0 42px;font-size:18px;color:var(--soft);max-width:780px}
+.part{margin:54px 0 0;padding-top:32px;border-top:1px solid var(--line)}
+.part-label{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px}
+h2.part-title{font-size:34px;line-height:1.08;font-weight:500;letter-spacing:-.02em;margin:0 0 12px}
+.part-intro,.text-block{font-size:19px;color:var(--soft);max-width:760px}
+.text-block p{margin:0 0 18px}
+ol{counter-reset:item;list-style:none;margin:0;padding:0;max-width:840px}
+li{counter-increment:item;margin:0 0 14px;padding:20px 22px 20px 74px;position:relative;background:var(--tint2);border:1px solid var(--line);border-radius:15px}
+li::before{content:counter(item);position:absolute;left:22px;top:22px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;font-weight:700}
+li strong{display:block;font-size:22px;margin-bottom:5px;font-weight:500}
+li span{display:block;color:var(--soft);font-size:17px}
+.method{margin-top:58px;background:var(--tint);border-radius:22px;padding:30px 32px;max-width:850px}
+.method h2{margin:0 0 14px;font-size:30px;font-weight:500}
+.method p{color:var(--soft);font-size:18px}
+.nav-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:54px;padding-top:24px;border-top:1px solid var(--line)}
+.nav-links a{text-decoration:none;color:var(--accent2);background:var(--tint2);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:15px}
+.footer{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:20px}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+<div class="kicker">Coffee Experience Landscape · Page 10</div>
+
+<h1>Taste</h1>
+
+<p class="subtitle">
+Taste is smaller than flavour.
+That makes it easier to understand.
+</p>
+
+<div class="note">
+When people say coffee tastes like chocolate, mango, jasmine, or smoke,
+they are usually speaking about flavour.
+
+Taste itself is more basic.
+</div>
+
+<section class="part">
+<div class="part-label">Part I</div>
+<h2 class="part-title">What the Tongue Notices</h2>
+
+<div class="text-block">
+<p>
+The tongue does not identify blueberry.
+</p>
+
+<p>
+It notices broad signals.
+Those signals help shape the cup, but they do not carry the whole experience.
+</p>
+</div>
+
+<ol>
+<li><strong>Sweet</strong><span>Softening, rounded, pleasant, sometimes syrup-like.</span></li>
+<li><strong>Sour</strong><span>Sharp, bright, lively, sometimes clean, sometimes harsh.</span></li>
+<li><strong>Bitter</strong><span>Familiar in coffee. Pleasant in balance, rough when excessive.</span></li>
+<li><strong>Salty</strong><span>Usually quiet in coffee, but sometimes part of balance.</span></li>
+<li><strong>Umami</strong><span>Savoury depth. Not common as a main coffee word, but useful to know.</span></li>
+</ol>
+</section>
+
+<section class="part">
+<div class="part-label">Part II</div>
+<h2 class="part-title">Taste Gives Structure</h2>
+
+<p class="part-intro">
+Taste is not decoration.
+It gives the cup its basic shape.
+</p>
+
+<ol start="6">
+<li><strong>Sweetness Softens</strong><span>It can make acidity gentler and bitterness more pleasant.</span></li>
+<li><strong>Acidity Lifts</strong><span>It can make coffee feel alive, fresh, or sharp.</span></li>
+<li><strong>Bitterness Anchors</strong><span>It can give depth, seriousness, or too much weight.</span></li>
+</ol>
+</section>
+
+<section class="part">
+<div class="part-label">Part III</div>
+<h2 class="part-title">Taste and Aroma Work Together</h2>
+
+<div class="text-block">
+<p>
+A sweet taste with a fruity aroma may feel like ripe fruit.
+</p>
+
+<p>
+A bitter taste with roasted aroma may feel like dark chocolate.
+</p>
+
+<p>
+The tongue gives part of the message.
+The nose completes much of it.
+</p>
+</div>
+
+<ol start="9">
+<li><strong>Sweet + Fruit Aroma</strong><span>May become peach, berry, mango, or dried fruit in the mind.</span></li>
+<li><strong>Bitter + Roast Aroma</strong><span>May become cocoa, toast, roasted nuts, or smoke.</span></li>
+<li><strong>Sour + Citrus Aroma</strong><span>May become lemon, orange, lime, or grapefruit.</span></li>
+</ol>
+</section>
+
+<section class="part">
+<div class="part-label">Part IV</div>
+<h2 class="part-title">Balance Matters</h2>
+
+<p class="part-intro">
+The same taste can be welcome or unpleasant depending on balance.
+</p>
+
+<ol start="12">
+<li><strong>Good Sourness</strong><span>Fresh, lively, fruit-like.</span></li>
+<li><strong>Rough Sourness</strong><span>Sharp, thin, aggressive.</span></li>
+<li><strong>Good Bitterness</strong><span>Cocoa, tea, roast, structure.</span></li>
+<li><strong>Rough Bitterness</strong><span>Harsh, burnt, medicinal, tiring.</span></li>
+</ol>
+</section>
+
+<section class="part">
+<div class="part-label">Part V</div>
+<h2 class="part-title">A Simple Practice</h2>
+
+<div class="text-block">
+<p>
+Taste a coffee hot.
+Then again when it is warm.
+Then again later.
+</p>
+
+<p>
+Do not look for notes first.
+Look for changes in sweetness, sourness, and bitterness.
+</p>
+</div>
+
+<ol start="16">
+<li><strong>Hot</strong><span>Heat can hide sweetness and increase general intensity.</span></li>
+<li><strong>Warm</strong><span>Balance often becomes easier to read.</span></li>
+<li><strong>Cool</strong><span>Acidity and sweetness may become more visible.</span></li>
+</ol>
+</section>
+
+<section class="method">
+<h2>Page Direction</h2>
+
+<p><strong>Taste is the cup’s basic grammar.</strong></p>
+
+<p>
+It does not tell the whole story, but without it the story has no structure.
+</p>
+</section>
+
+<div class="nav-links">
+<a href="index.html">← Landscape Index</a>
+<a href="aroma.html">← Previous: Aroma</a>
+<a href="flavor.html">Next: Flavor →</a>
+</div>
+
+<div class="footer">
+Draft HTML page · Coffee Experience Landscape · Buna Library · KoffyKraft
+</div>
+
+</main>
+</body>
+</html>
