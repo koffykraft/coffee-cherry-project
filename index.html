@@ -1,547 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Begin With A Cup — The Buna Coffee Leaf Library</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BUNA · Coffee Experience Landscape</title>
+<link rel="stylesheet" href="assets/css/buna.css">
 
-        :root {
-            --dark: #1a1a1a;
-            --gray: #636e72;
-            --light-gray: #b2bec3;
-            --cream: #f8f9fa;
-            --accent: #5f4a42;
-            --subtle: #d4c5c0;
+<style>
+:root{
+  --ink:#1b1814;
+  --soft:#665d52;
+  --muted:#8f8274;
+  --paper:#fffdf8;
+  --tint:#f5efe5;
+  --tint2:#fbf7ef;
+  --line:#d9cdbd;
+  --accent:#9c3f2e;
+  --accent2:#5f241a;
+  --max:980px;
+}
 
-            --evidence: #5f4a42;
-            --evidence-bg: #f3ece9;
-            --recipe: #6b7d5f;
-            --recipe-bg: #eef2ec;
-            --caution: #a85d4a;
-            --caution-bg: #f7e9e4;
-            --note: #636e72;
-            --note-bg: #eef0f1;
-            --tradition: #8a6d3b;
-            --tradition-bg: #f6efe2;
+*{box-sizing:border-box}
 
-            --state-alpha: #6b7d5f;
-            --state-beta: #b08968;
-            --state-gamma: #8a6d3b;
-            --state-delta: #a85d4a;
-            --state-epsilon: #5f4a42;
+html{scroll-behavior:smooth}
 
-            --primer-bg: #fdfbf9;
-        }
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  line-height:1.62;
+}
 
-        html { scroll-behavior: smooth; }
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:58px 28px 90px;
+}
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--cream);
-            color: var(--dark);
-            line-height: 1.6;
-            font-size: 17px;
-        }
+.kicker{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:22px;
+  font-weight:700;
+}
 
-        header {
-            background: white;
-            border-bottom: 2px solid var(--subtle);
-            padding: 40px 30px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.2em;
-            font-weight: 300;
-            letter-spacing: -0.5px;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-        header .subtitle {
-            font-size: 1.1em;
-            color: var(--gray);
-            font-weight: 400;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .header-back { margin-bottom: 16px; }
-        .header-back a {
-            color: var(--gray);
-            text-decoration: none;
-            font-size: 0.9em;
-            border-bottom: 1px solid var(--subtle);
-        }
-        .header-meta {
-            margin-top: 18px;
-            font-size: 0.85em;
-            color: var(--light-gray);
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
+h1{
+  font-size:clamp(42px,7vw,78px);
+  line-height:.96;
+  letter-spacing:-.05em;
+  font-weight:500;
+  margin:0 0 26px;
+  max-width:850px;
+}
 
-        /* Sticky in-page nav */
-        nav.subnav {
-            background: var(--dark);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 0;
-        }
-        .subnav-inner {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            overflow-x: auto;
-            scrollbar-width: none;
-        }
-        .subnav-inner::-webkit-scrollbar { display: none; }
-        .subnav a {
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            font-size: 0.85em;
-            font-weight: 600;
-            padding: 14px 20px;
-            white-space: nowrap;
-            border-bottom: 2px solid transparent;
-            transition: all 0.15s;
-        }
-        .subnav a:hover, .subnav a.home {
-            color: white;
-        }
-        .subnav a.home { color: var(--subtle); }
+.subtitle{
+  font-size:21px;
+  color:var(--soft);
+  max-width:720px;
+  margin:0 0 46px;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 50px 30px;
-        }
+.note{
+  background:var(--tint2);
+  border-left:4px solid var(--accent);
+  padding:22px 24px;
+  margin:0 0 42px;
+  font-size:18px;
+  color:var(--soft);
+  max-width:780px;
+}
 
-        section { margin-bottom: 60px; }
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+  margin:34px 0 52px;
+  max-width:860px;
+}
 
-        /* Primer sections get a subtle distinct background */
-        .primer-section {
-            background: var(--primer-bg);
-            border: 1px solid var(--subtle);
-            border-radius: 8px;
-            padding: 32px;
-            margin-bottom: 32px;
-        }
-        .primer-kicker {
-            font-size: 0.75em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
+.card{
+  border:1px solid var(--line);
+  background:#fffefb;
+  padding:24px 26px;
+  border-radius:18px;
+}
 
-        h2 {
-            font-size: 1.6em;
-            font-weight: 600;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--subtle);
-        }
-        .primer-section h2 { border-bottom: none; padding-bottom: 0; }
-        h2 em { font-style: italic; font-weight: 400; color: var(--gray); }
+.card h2{
+  font-size:16px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent2);
+  margin:0 0 8px;
+}
 
-        h3 {
-            font-size: 1.2em;
-            font-weight: 600;
-            margin: 28px 0 12px;
-            color: var(--dark);
-        }
-        h4 {
-            font-size: 0.85em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--gray);
-            margin: 20px 0 8px;
-        }
+.card p{
+  margin:0;
+  color:var(--soft);
+  font-size:18px;
+}
 
-        p { margin-bottom: 14px; }
-        a { color: var(--accent); }
-        strong { font-weight: 700; color: var(--dark); }
+.part{
+  margin:54px 0 0;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+}
 
-        /* Part dividers */
-        .part-divider {
-            margin: 60px 0 30px;
-            padding-top: 24px;
-            border-top: 4px solid var(--dark);
-        }
-        .part-label {
-            font-size: 0.75em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--accent);
-            margin-bottom: 6px;
-        }
-        .part-title {
-            font-size: 1.9em;
-            font-weight: 300;
-            margin-bottom: 10px;
-            border-bottom: none;
-        }
-        .part-intro {
-            color: var(--gray);
-            font-size: 1.05em;
-            max-width: 760px;
-        }
+.part-label{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:10px;
+}
 
-        .section-num {
-            font-size: 0.75em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--light-gray);
-            margin-bottom: 6px;
-        }
+h2.part-title{
+  font-size:34px;
+  line-height:1.08;
+  font-weight:500;
+  letter-spacing:-.02em;
+  margin:0 0 12px;
+}
 
-        /* ====================================================
-           TABLE OF CONTENTS
-           ==================================================== */
-        .toc {
-            background: white;
-            border: 1px solid var(--subtle);
-            border-radius: 6px;
-            padding: 28px 32px;
-            margin-bottom: 40px;
-        }
-        .toc-track-label {
-            font-size: 0.8em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--accent);
-            margin: 24px 0 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--subtle);
-        }
-        .toc-track-label:first-child { margin-top: 0; }
-        .toc-part {
-            font-size: 0.85em;
-            font-weight: 700;
-            color: var(--gray);
-            margin: 18px 0 6px;
-        }
-        .toc-entries { list-style: none; columns: 2; gap: 32px; margin-bottom: 4px; }
-        .toc-entries li { margin-bottom: 4px; break-inside: avoid; }
-        .toc-entries a {
-            text-decoration: none;
-            font-size: 0.92em;
-            display: flex;
-            gap: 8px;
-        }
-        .toc-entries a:hover { text-decoration: underline; }
-        .toc-num {
-            color: var(--light-gray);
-            font-weight: 700;
-            min-width: 28px;
-            flex-shrink: 0;
-        }
-        @media (max-width: 700px) {
-            .toc-entries { columns: 1; }
-        }
+.part-intro{
+  font-size:19px;
+  color:var(--soft);
+  max-width:720px;
+  margin:0 0 24px;
+}
 
-        /* ====================================================
-           CALLOUT BOXES
-           ==================================================== */
-        .box {
-            border-radius: 6px;
-            padding: 20px 24px;
-            margin: 20px 0;
-            border-left: 4px solid;
-        }
-        .box-label {
-            display: inline-block;
-            font-size: 0.75em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 10px;
-            padding: 3px 10px;
-            border-radius: 3px;
-        }
-        .box p:last-child { margin-bottom: 0; }
+ol{
+  counter-reset:item;
+  list-style:none;
+  margin:0;
+  padding:0;
+  max-width:840px;
+}
 
-        .box-evidence { background: var(--evidence-bg); border-left-color: var(--evidence); }
-        .box-evidence .box-label { background: var(--evidence); color: white; }
+li{
+  counter-increment:item;
+  margin:0 0 14px;
+  padding:20px 22px 20px 74px;
+  position:relative;
+  background:var(--tint2);
+  border:1px solid var(--line);
+  border-radius:15px;
+}
 
-        .box-recipe { background: var(--recipe-bg); border-left-color: var(--recipe); }
-        .box-recipe .box-label { background: var(--recipe); color: white; }
+li::before{
+  content:counter(item);
+  position:absolute;
+  left:22px;
+  top:22px;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:var(--accent);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:14px;
+  font-weight:700;
+}
 
-        .box-caution { background: var(--caution-bg); border-left-color: var(--caution); border-left-style: dashed; }
-        .box-caution .box-label { background: var(--caution); color: white; }
+li a{
+  color:var(--ink);
+  text-decoration:none;
+}
 
-        .box-note { background: var(--note-bg); border-left-color: var(--note); }
-        .box-note .box-label { background: var(--note); color: white; }
+li a:hover strong{
+  text-decoration:underline;
+}
 
-        .box-tradition { background: var(--tradition-bg); border-left-color: var(--tradition); }
-        .box-tradition .box-label { background: var(--tradition); color: white; }
+li strong{
+  display:block;
+  font-size:22px;
+  line-height:1.2;
+  font-weight:500;
+  margin-bottom:5px;
+}
 
-        /* ====================================================
-           GLOSSARY / DEFINITION GRID
-           ==================================================== */
+li span{
+  display:block;
+  color:var(--soft);
+  font-size:17px;
+}
 
-        /* ====================================================
-           LOUNGE — WELCOME + DOORS
-           ==================================================== */
-        .lounge-welcome {
-            text-align: center;
-            max-width: 520px;
-            margin: 0 auto 50px;
-        }
-        .lounge-welcome p {
-            font-size: 1.05em;
-            line-height: 1.8;
-            margin-bottom: 16px;
-            text-align: left;
-        }
-        .lounge-welcome .lounge-tagline {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 24px;
-            text-align: center;
-        }
-        .lounge-welcome .lounge-prompt {
-            font-size: 1.05em;
-            font-weight: 600;
-            margin-top: 28px;
-            margin-bottom: 0;
-            text-align: center;
-        }
+.move{
+  opacity:.78;
+}
 
-        /* Scroll-down indicator */
-        .scroll-cue {
-            display: flex;
-            justify-content: center;
-            margin: 10px 0 28px;
-            animation: scrollcue 2s ease-in-out infinite;
-        }
-        .scroll-cue svg { width: 22px; height: 22px; color: #a0a8ac; }
-        @keyframes scrollcue {
-            0%, 100% { transform: translateY(0); opacity: 0.5; }
-            50% { transform: translateY(6px); opacity: 1; }
-        }
+.method{
+  margin-top:58px;
+  background:var(--tint);
+  border-radius:22px;
+  padding:30px 32px;
+  max-width:850px;
+}
 
-        .door-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin: 0 0 50px;
-        }
-        .door-card {
-            background: white;
-            border: 1px solid #c8bdb8;
-            border-radius: 8px;
-            padding: 28px 28px;
-            transition: box-shadow 0.2s, transform 0.2s;
-        }
-        .door-card:hover {
-            box-shadow: 0 6px 20px rgba(0,0,0,0.09);
-            transform: translateY(-2px);
-        }
-        .door-number {
-            font-size: 0.72em;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #a0a8ac;
-            margin-bottom: 6px;
-        }
-        .door-card h3 {
-            font-size: 1.35em;
-            margin-bottom: 4px;
-            color: var(--dark);
-        }
-        .door-subtitle {
-            font-size: 0.9em;
-            color: var(--accent);
-            font-style: italic;
-            margin-bottom: 12px;
-        }
-        .door-card .door-question {
-            font-size: 0.95em;
-            color: #5f5f5f;
-            margin-bottom: 14px;
-            line-height: 1.65;
-        }
-        .door-card ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .door-card ul li {
-            padding: 7px 0;
-            border-top: 1px solid #ddd5d0;
-        }
-        .door-card ul li:first-child { border-top: none; }
-        .door-card ul li a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95em;
-        }
-        .door-card ul li a:hover { color: var(--accent); }
-        .door-card ul li a::after { content: " →"; opacity: 0.4; }
+.method h2{
+  margin:0 0 14px;
+  font-size:30px;
+  font-weight:500;
+  letter-spacing:-.02em;
+}
 
-        @media (max-width: 700px) {
-            .door-grid { grid-template-columns: 1fr; }
-        }
+.method p{
+  margin:0 0 14px;
+  color:var(--soft);
+  font-size:18px;
+  max-width:720px;
+}
 
-        .lounge-hook {
-            font-family: Georgia, serif;
-            font-size: clamp(2.4rem, 8vw, 3.6rem);
-            font-weight: normal;
-            line-height: 1.15;
-            color: #1a1a1a;
-            text-align: center;
-            max-width: 620px;
-            margin: 0 auto;
-            padding: 56px 20px 36px;
-            letter-spacing: -.02em;
-        }
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--light-gray);
-            font-size: 0.92em;
-            line-height: 1.8;
-        }
+.footer{
+  margin-top:56px;
+  color:var(--muted);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:13px;
+  border-top:1px solid var(--line);
+  padding-top:20px;
+}
 
-    </style>
+@media (max-width:640px){
+  .wrap{padding:40px 20px 70px}
+  .subtitle{font-size:19px}
+  li{padding-left:62px}
+  li::before{left:18px}
+  .card{padding:20px}
+  .method{padding:24px}
+}
+</style>
+</head>
 
 <body>
-    <header style="padding-bottom: 10px;">
-        <div class="subtitle" style="margin-bottom: 0; font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; opacity: .5;">The Buna Coffee Leaf Library · KoffyKraft</div>
-    </header>
+<main class="wrap">
 
-    <div class="container" style="padding-top: 40px;">
+  <div class="kicker">Coffee Experience Landscape · Working Structure</div>
 
-        <div class="lounge-welcome">
-            <p class="lounge-hook">A library about brewing coffee leaves.</p>
-        </div>
+  <h1>How Coffee Becomes Experience</h1>
 
-        <div class="scroll-cue">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-        </div>
+  <p class="subtitle">
+    A working structure for exploring coffee as plant, fruit, seed,
+    beverage, aroma, flavour, memory, and experience within the wider
+    Buna Library.
+  </p>
 
-        <div class="door-grid">
+  <div class="note">
+    This landscape does not begin with tasting notes.
+    It begins with a simple question:
+    how does a coffee become an experience?
+    The goal is not to memorise descriptors.
+    The goal is to understand where they come from,
+    why they differ, and how humans learn to recognise them.
+  </div>
 
-            <div class="door-card">
-                <div class="door-number">Door One</div>
-                <h3>Just Curious?</h3>
-                <div class="door-subtitle">The Balcony</div>
-                <div class="door-question">What is it? What does it taste like? Start here.</div>
-                <ul>
-                    <li><a href="begin-with-a-cup.html">Begin With a Cup</a></li>
-                    <li><a href="sensory-landscape-of-coffee-leaf.html">The Sensory Landscape of Coffee Leaf</a></li>
-                </ul>
-            </div>
-
-            <div class="door-card">
-                <div class="door-number">Door Two</div>
-                <h3>Follow the Traditions</h3>
-                <div class="door-subtitle">The Cultural Wing</div>
-                <div class="door-question">How have different communities prepared and used coffee leaves?</div>
-                <ul>
-                    <li><a href="the-foliage-of-buna.html">The Foliage of Buna</a></li>
-                    <li><a href="engere-intro.html">Engere</a></li>
-                    <li><a href="kuti-intro.html">Kuti</a></li>
-                    <li><a href="chemo-intro.html">Chemo</a></li>
-                    <li><a href="kawa-daun-intro.html">Kawa Daun</a></li>
-                </ul>
-            </div>
-
-            <div class="door-card">
-                <div class="door-number">Door Three</div>
-                <h3>Explore the Workshop</h3>
-                <div class="door-subtitle">Where Observation Becomes Experiment</div>
-                <div class="door-question">How does processing change flavour &mdash; and how is that explored at Thumpassery? The papers, field guides, and processing notes.</div>
-                <ul>
-                    <li><a href="citane-process-compass.html">The Process Compass</a></li>
-                    <li><a href="citane-processing-manual.html">Paper II &mdash; From Leaf to Cup</a></li>
-                    <li><a href="citane-processing-protocols.html">Paper III &mdash; Experimental Pathways</a></li>
-                    <li><a href="citane-hack-grill-wilted-leaves.html">Citane Hack: Grill-Wilted Leaves</a></li>
-                    <li><a href="citane-hack-gas-flame-roasted-leaf.html">Citane Hack: Gas-Flame Roasted Leaf</a></li>
-                </ul>
-            </div>
-
-            <div class="door-card">
-                <div class="door-number">Door Four</div>
-                <h3>Enter the Archives</h3>
-                <div class="door-subtitle">The Deepest Part of the Library</div>
-                <div class="door-question">The framework, the chemistry, and how this library decides what it's willing to claim.</div>
-                <ul>
-                    <li><a href="citane-reactive-landscape.html">Paper I &mdash; The Reactive Landscape</a></li>
-                    <li><a href="sensory-landscape-of-coffee-leaf.html">The Sensory Landscape of Coffee Leaf</a></li>
-                    <li><a href="the-foliage-of-buna.html#evidence">How We Treat Evidence</a></li>
-                </ul>
-            </div>
-
-            <div class="door-card" style="border-color: #4a6a9a; background: #f8f9fd;">
-                <div class="door-number" style="color: #4a6a9a;">Door Five</div>
-                <h3>Use the Tools</h3>
-                <div class="door-subtitle" style="color: #4a6a9a;">The Interactive Lab</div>
-                <div class="door-question">Walk the terrain from plant to sip, map flavour relationships, build a processing pathway — or let the Epsilon Board generate a speculative route beyond the papers.</div>
-                <ul>
-                    <li><a href="citane-terrain-map.html">Terrain Map — Plant to Sip</a></li>
-                    <li><a href="clt-flavour-wheel.html">CLT Flavour Landscape</a></li>
-                    <li><a href="citane-logic-board.html">Flavour Logic Board</a></li>
-                    <li><a href="citane-epsilon-board.html">ε Epsilon Board — Theoretical Pathways</a></li>
-                </ul>
-            </div>
-
-            <div class="door-card" style="border-color: #8b6f47; background: #fdfaf4;">
-                <div class="door-number" style="color: #8b6f47;">Door Six</div>
-                <h3>Learn to Sense</h3>
-                <div class="door-subtitle" style="color: #8b6f47;">The Sensory School</div>
-                <div class="door-question">You already sense — every day, without thinking about it. This school begins there, before introducing Buna, before any vocabulary or chemistry.</div>
-                <ul>
-                    <li><a href="buna-sensory-school.html">The Buna Sensory School</a></li>
-                    <li><a href="sensory-already.html">You Already Sense — Before You Begin</a></li>
-                    <li><a href="sensory-encounter.html">Layer One — The Encounter</a></li>
-                    <li><a href="sensory-language.html">Layer Two — The Language</a></li>
-                    <li><a href="sensory-chemistry.html">Layer Three — The Chemistry</a></li>
-                    <li><a href="sensory-companion.html">The Companion — guided walk with choices</a></li>
-                </ul>
-            </div>
-
-            <div class="door-card" style="border-color: #8a7c5e; background: #fdfaf4;">
-                <div class="door-number" style="color: #8a7c5e;">Door Seven</div>
-                <h3>Bring It to the Table</h3>
-                <div class="door-subtitle" style="color: #8a7c5e;">Buna Culinary</div>
-                <div class="door-question">What does the leaf do when salt, fat, acid, and heat are applied? New territory. Foundational theory. Working preparations. Offered for thinking and for testing.</div>
-                <ul>
-                    <li><a href="buna-culinary.html">The Leaf at the Table</a></li>
-                    <li><a href="buna-culinary-elements.html">The Leaf and the Elements — Theory</a></li>
-                    <li><a href="buna-culinary-preparations.html">The Preparations</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="lounge-footer-note">
-            <p>A visitor can spend three minutes here and leave satisfied. A researcher can spend three days here and still have more to explore. Both are welcome.</p>
-            <p style="margin-top: 20px;"><a href="catalogue.html" style="color: var(--accent);">Enter the full library (Catalogue) &rarr;</a></p>
-        </div>
-
+  <section class="grid" aria-label="Core discipline">
+    <div class="card">
+      <h2>Working Discipline</h2>
+      <p>Observe first. Describe later. Let the cup speak before the label does.</p>
     </div>
 
-    <footer>
-        <p><strong>The Buna Coffee Leaf Library</strong></p>
-        <p>KoffyKraft / Thumpassery Estate &middot; Karavaloor &middot; Kollam &middot; Kerala &middot; India</p>
-    </footer>
+    <div class="card">
+      <h2>Working Assumption</h2>
+      <p>Different people may experience the same coffee differently. That is not failure. It is part of perception.</p>
+    </div>
+  </section>
 
+  <section class="part">
+    <div class="part-label">Part I</div>
+    <h2 class="part-title">Meeting Coffee</h2>
+    <p class="part-intro">
+      Before sensory language, there is coffee itself: a plant, a fruit,
+      a seed, a crop, a beverage, and a cultural object.
+    </p>
+
+    <ol>
+      <li>
+        <a href="what-is-coffee.html">
+          <strong>What Is Coffee?</strong>
+          <span>Coffee as plant, fruit, seed, beverage, and human companion.</span>
+        </a>
+      </li>
+
+      <li class="move">
+        <a href="coffee-around-the-world.html">
+          <strong>Coffee Around the World</strong>
+          <span>Ceremony, habit, trade, ritual, hospitality, and everyday use.</span>
+        </a>
+      </li>
+
+      <li class="move">
+        <a href="arabica-and-robusta.html">
+          <strong>Arabica and Robusta</strong>
+          <span>Two major coffee species, their differences, overlaps, and misunderstandings.</span>
+        </a>
+      </li>
+
+      <li class="move">
+        <a href="from-fruit-to-beverage.html">
+          <strong>From Fruit to Beverage</strong>
+          <span>Plant → cherry → seed → roast → brew → cup.</span>
+        </a>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part II</div>
+    <h2 class="part-title">Meeting Experience</h2>
+    <p class="part-intro">
+      Coffee is not experienced by the tongue alone. It arrives through
+      eyes, nose, mouth, memory, attention, and language.
+    </p>
+
+    <ol start="5">
+      <li class="move">
+        <a href="what-happens-when-we-drink-coffee.html">
+          <strong>What Happens When We Drink Coffee?</strong>
+          <span>The path from cup to senses to brain.</span>
+        </a>
+      </li>
+
+      <li class="move">
+        <a href="aroma-taste-and-flavor.html">
+          <strong>Aroma, Taste and Flavor</strong>
+          <span>Three words often used together, but not the same thing.</span>
+        </a>
+      </li>
+
+      <li class="move">
+        <a href="how-do-we-recognize-things.html">
+          <strong>How Do We Recognize Things?</strong>
+          <span>Receptors, signals, memory, comparison, and naming.</span>
+        </a>
+      </li>
+
+      <li class="move">
+        <a href="learning-to-experience-coffee.html">
+          <strong>Learning to Experience Coffee</strong>
+          <span>How to approach coffee without forcing yourself to agree with a label.</span>
+        </a>
+      </li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part III</div>
+    <h2 class="part-title">The Elements of Experience</h2>
+    <p class="part-intro">
+      A cup can be opened into smaller experiences: aroma, taste,
+      flavour, texture, temperature, acidity, sweetness, and bitterness.
+    </p>
+
+    <ol start="9">
+      <li class="move"><a href="aroma.html"><strong>Aroma</strong><span>What reaches the nose before and during drinking.</span></a></li>
+      <li class="move"><a href="taste.html"><strong>Taste</strong><span>Sweet, sour, bitter, salty, umami — and what they are not.</span></a></li>
+      <li class="move"><a href="flavor.html"><strong>Flavor</strong><span>The combined experience of aroma, taste, mouthfeel, and memory.</span></a></li>
+      <li class="move"><a href="body-and-mouthfeel.html"><strong>Body and Mouthfeel</strong><span>Weight, texture, smoothness, dryness, and astringency.</span></a></li>
+      <li class="move"><a href="acidity.html"><strong>Acidity</strong><span>Brightness, sharpness, fruit impression, structure, and sourness.</span></a></li>
+      <li class="move"><a href="sweetness.html"><strong>Sweetness</strong><span>Perceived sweetness, actual sugars, aroma association, and balance.</span></a></li>
+      <li class="move"><a href="bitterness.html"><strong>Bitterness</strong><span>Not always a defect. Sometimes structure, sometimes harshness.</span></a></li>
+      <li class="move"><a href="temperature.html"><strong>Temperature</strong><span>How the same cup changes as it cools.</span></a></li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part IV</div>
+    <h2 class="part-title">Why Coffees Become Different</h2>
+    <p class="part-intro">
+      Difference begins before roasting. Variety, environment, soil,
+      processing, fermentation, drying, storage, and resting all shape
+      what may later appear in the cup.
+    </p>
+
+    <ol start="17">
+      <li class="move"><a href="variety.html"><strong>Variety</strong><span>Genetic differences and the flavours they can support.</span></a></li>
+      <li class="move"><a href="environment.html"><strong>Environment</strong><span>Climate, altitude, shade, rainfall, and stress.</span></a></li>
+      <li class="move"><a href="soil-and-soil-life.html"><strong>Soil and Soil Life</strong><span>Minerals, biology, roots, water, and the unseen farm ecology.</span></a></li>
+      <li class="move"><a href="processing.html"><strong>Processing</strong><span>Washed, natural, honey, pulped natural, and other ways of guiding change.</span></a></li>
+      <li class="move"><a href="fermentation.html"><strong>Fermentation</strong><span>Microbes, intervention, time, aroma, risk, and modern control.</span></a></li>
+      <li class="move"><a href="drying.html"><strong>Drying</strong><span>Sun, shade, bed, patio, airflow, moisture, and stopping points.</span></a></li>
+      <li class="move"><a href="storage.html"><strong>Storage</strong><span>Green coffee as a living-ish material still changing with time.</span></a></li>
+      <li class="move"><a href="resting.html"><strong>Resting</strong><span>What happens after processing and after roasting.</span></a></li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part V</div>
+    <h2 class="part-title">Transformation</h2>
+    <p class="part-intro">
+      Coffee carries potential. Heat, time, microbes, moisture, and water
+      decide which parts of that potential become visible.
+    </p>
+
+    <ol start="25">
+      <li class="move"><a href="what-are-precursors.html"><strong>What Are Precursors?</strong><span>Flavour potential before flavour appears.</span></a></li>
+      <li class="move"><a href="chemistry-of-coffee.html"><strong>The Chemistry of Coffee</strong><span>Compounds, volatiles, solubles, acids, sugars, alkaloids, and aroma families.</span></a></li>
+      <li class="move"><a href="roasting.html"><strong>Roasting</strong><span>How heat transforms the seed into aroma and flavour.</span></a></li>
+      <li class="move"><a href="development.html"><strong>Development</strong><span>How roast decisions shift sweetness, acidity, body, and bitterness.</span></a></li>
+      <li class="move"><a href="freshness-and-aging.html"><strong>Freshness and Aging</strong><span>Degassing, resting, staling, loss, and integration.</span></a></li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part VI</div>
+    <h2 class="part-title">Expression</h2>
+    <p class="part-intro">
+      Some things are common across coffees. Others branch into distinctive
+      expressions because of variety, place, processing, fermentation, or roasting.
+    </p>
+
+    <ol start="30">
+      <li class="move"><a href="washed-coffees.html"><strong>Washed Coffees</strong><span>Clarity, structure, acidity, and what washed processing tends to preserve.</span></a></li>
+      <li class="move"><a href="natural-coffees.html"><strong>Natural Coffees</strong><span>Fruit, fermentation, body, intensity, and changing expectations.</span></a></li>
+      <li class="move"><a href="modern-fermentation.html"><strong>Modern Fermentation</strong><span>How intervention blurs old boundaries between washed and natural.</span></a></li>
+      <li class="move"><a href="understanding-flavor-families.html"><strong>Understanding Flavor Families</strong><span>How descriptors cluster into families without becoming fixed rules.</span></a></li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part VII</div>
+    <h2 class="part-title">The Sensory Atlas</h2>
+    <p class="part-intro">
+      Descriptor territories are not exams. They are aids to noticing.
+      Each page will ask what people may mean, where the impression may
+      come from, and how to learn it gently.
+    </p>
+
+    <ol start="34">
+      <li class="move"><a href="floral.html"><strong>Floral</strong><span>Jasmine, rose, orange blossom, tea-like perfume.</span></a></li>
+      <li class="move"><a href="fruit.html"><strong>Fruit</strong><span>The broadest territory: fresh, cooked, dried, jammy, wine-like.</span></a></li>
+      <li class="move"><a href="citrus.html"><strong>Citrus</strong><span>Lemon, lime, orange, grapefruit, peel, zest, acidity and aroma.</span></a></li>
+      <li class="move"><a href="berry.html"><strong>Berry</strong><span>Blueberry, blackberry, strawberry, blackcurrant, red fruit.</span></a></li>
+      <li class="move"><a href="stone-fruit.html"><strong>Stone Fruit</strong><span>Peach, apricot, plum, nectarine.</span></a></li>
+      <li class="move"><a href="tropical-fruit.html"><strong>Tropical Fruit</strong><span>Mango, pineapple, banana, passion fruit, jackfruit-like associations.</span></a></li>
+      <li class="move"><a href="nut.html"><strong>Nut</strong><span>Almond, hazelnut, peanut, walnut, roasted seed impressions.</span></a></li>
+      <li class="move"><a href="chocolate.html"><strong>Chocolate</strong><span>Cocoa, dark chocolate, milk chocolate, cacao nib, roast sweetness.</span></a></li>
+      <li class="move"><a href="caramel.html"><strong>Caramel</strong><span>Caramelised sugar, jaggery, toffee, molasses, brown sweetness.</span></a></li>
+      <li class="move"><a href="spice.html"><strong>Spice</strong><span>Clove, cinnamon, pepper, cardamom-like warmth and aromatic lift.</span></a></li>
+      <li class="move"><a href="herbal.html"><strong>Herbal</strong><span>Green, grassy, leafy, tea-like, fresh plant impressions.</span></a></li>
+      <li class="move"><a href="earth.html"><strong>Earth</strong><span>Soil, wood, humus, mushroom, forest floor, mineral associations.</span></a></li>
+      <li class="move"><a href="fermented.html"><strong>Fermented</strong><span>Winey, boozy, vinegar, lactic, ripe fruit, controlled and uncontrolled edges.</span></a></li>
+      <li class="move"><a href="roast.html"><strong>Roast</strong><span>Toast, smoke, char, ash, roasted nuts, roasted coffee identity.</span></a></li>
+    </ol>
+  </section>
+
+  <section class="part">
+    <div class="part-label">Part VIII</div>
+    <h2 class="part-title">Buna Connections</h2>
+    <p class="part-intro">
+      Coffee belongs in Buna because it is a fruit of the coffee plant.
+      The seed is one path. The leaf, flower, fruit, and their transformations
+      are other paths in the same living system.
+    </p>
+
+    <ol start="48">
+      <li class="move"><a href="coffee-fruit.html"><strong>Coffee Fruit</strong><span>The cherry as fruit, not packaging.</span></a></li>
+      <li class="move"><a href="coffee-leaf.html"><strong>Coffee Leaf</strong><span>The leaf as a parallel expression of the same plant.</span></a></li>
+      <li class="move"><a href="shared-compounds.html"><strong>Shared Compounds</strong><span>Where seed, fruit, flower, and leaf overlap chemically and sensorially.</span></a></li>
+      <li class="move"><a href="divergent-expressions.html"><strong>Divergent Expressions</strong><span>Where the plant’s parts move apart into different experiences.</span></a></li>
+      <li class="move"><a href="citane.html"><strong>Citane</strong><span>The coffee leaf pathway within the larger Buna landscape.</span></a></li>
+    </ol>
+  </section>
+
+  <section class="method">
+    <h2>Emerging Structure</h2>
+    <p><strong>Coffee path:</strong> Plant → Fruit → Seed → Roast → Beverage → Experience.</p>
+    <p><strong>Buna path:</strong> Plant → Fruit → Leaf → Seed → Transformation → Experience.</p>
+    <p>This is not a final taxonomy. It is a working scaffold. If the pages reveal a better structure, this one should be revised.</p>
+  </section>
+
+  <div class="footer">
+    Draft HTML structure · Coffee Experience Landscape · Buna Library · KoffyKraft
+  </div>
+
+</main>
 </body>
 </html>
